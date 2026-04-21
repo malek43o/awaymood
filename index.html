@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AwayMood | Travel Beyond Boundaries</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+    <style>
+        :root {
+            --bg-main: #F0E4D3;
+            --clay: #D9A299;
+            --sand: #DCC5B2;
+            --ivory: #FFFFF0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: #2d2d2d;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-ivory { background-color: var(--ivory); }
+        .text-clay { color: var(--clay); }
+        .bg-clay { background-color: var(--clay); }
+        .bg-sand { background-color: var(--sand); }
+        
+        /* Pre-animation states */
+        .feature-card, .download-card { opacity: 0; }
+        
+        #main-nav { transition: all 0.4s ease; }
+        
+      .hero-image-wrap {
+    transform-origin: center top; /* عشان التصغير يبدأ من فوق، مش من نص الصورة */
+}
+
+
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: var(--clay); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav id="main-nav" class="fixed w-full z-[100] p-6 flex justify-between items-center px-6 md:px-10 bg-[#F0E4D3]/80 backdrop-blur-md">
+        <div class="text-2xl font-black text-clay tracking-tighter uppercase">AwayMood</div>
+        <div class="space-x-8 hidden md:flex">
+            <a href="#features" class="hover:text-clay transition font-bold">Features</a>
+            <a href="#download" class="hover:text-clay transition font-bold">Download</a>
+        </div>
+        <a href="#download" class="bg-clay text-white px-8 py-3 rounded-full shadow-lg font-bold hover:scale-105 transition-transform">Install Now</a>
+    </nav>
+
+    <section class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20">
+        <div class="hero-content z-10">
+            <h1 class="text-5xl md:text-[7.5vw] font-black leading-none mb-6">
+                Travel with a <br> <span class="text-clay italic">New Mood</span>
+            </h1>
+            <p class="text-lg md:text-2xl max-w-2xl mx-auto opacity-70 mb-10">
+                Explore the world's most unique stays with the next generation of travel technology.
+            </p>
+        </div>
+        
+        <div class="hero-image-wrap absolute bottom-[-3%] w-[90%] md:w-[75%] h-[50vh] bg-ivory rounded-t-[4rem] shadow-2xl border-t border-sand flex items-center justify-center overflow-hidden">
+            <div class="text-sand/30 text-3xl md:text-6xl font-black italic tracking-widest uppercase">AwayMood Interface</div>
+        </div>
+    </section>
+
+    <section id="features" class="py-32 bg-ivory relative border-y border-sand/30">
+        <div class="container mx-auto px-6 md:px-10">
+            <div class="text-center mb-24">
+                <h2 class="text-clay font-bold tracking-widest uppercase mb-4">Core Features</h2>
+                <h3 class="text-4xl md:text-6xl font-black text-gray-800">Beyond Traditional Booking</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="feature-card p-10 bg-[#F0E4D3] rounded-[3rem] border border-sand hover:bg-white transition-all">
+                    <div class="icon-box w-16 h-16 bg-clay rounded-2xl mb-8 flex items-center justify-center text-white text-2xl font-bold">01</div>
+                    <h3 class="text-2xl font-bold mb-4">Mood Matching</h3>
+                    <p class="opacity-70 leading-relaxed text-lg">AI filters that understand your emotional state to find the perfect environment.</p>
+                </div>
+
+                <div class="feature-card p-10 bg-clay text-white rounded-[3rem] shadow-2xl scale-105 z-10">
+                    <div class="icon-box w-16 h-16 bg-ivory rounded-2xl mb-8 flex items-center justify-center text-clay text-2xl font-bold">02</div>
+                    <h3 class="text-2xl font-bold mb-4 italic text-ivory">AR Previews</h3>
+                    <p class="opacity-90 leading-relaxed text-lg text-ivory">Walk through properties using Augmented Reality before committing to a stay.</p>
+                </div>
+
+                <div class="feature-card p-10 bg-[#F0E4D3] rounded-[3rem] border border-sand hover:bg-white transition-all">
+                    <div class="icon-box w-16 h-16 bg-sand rounded-2xl mb-8 flex items-center justify-center text-white text-2xl font-bold">03</div>
+                    <h3 class="text-2xl font-bold mb-4">Global Support</h3>
+                    <p class="opacity-70 leading-relaxed text-lg">24/7 concierge service and seamless local payment integration worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-32 bg-[#F0E4D3] px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-5xl md:text-8xl font-black text-center mb-20 tracking-tighter">GET THE APP</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="download-card p-12 bg-white rounded-[4rem] shadow-xl border border-sand flex flex-col items-center text-center">
+                    <span class="text-clay font-bold tracking-widest uppercase mb-4">Traveler Edition</span>
+                    <h3 class="text-4xl font-black mb-6">AwayMood Client</h3>
+                    <p class="text-gray-500 mb-10 text-lg">Find and book your next dream vacation in seconds.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.awaymood.client" target="_blank" class="w-full bg-black text-white py-6 rounded-3xl font-bold text-xl hover:bg-clay transition-all">Download for Client</a>
+                </div>
+
+                <div class="download-card p-12 bg-white rounded-[4rem] shadow-xl border border-sand flex flex-col items-center text-center">
+                    <span class="text-clay font-bold tracking-widest uppercase mb-4">Host Edition</span>
+                    <h3 class="text-4xl font-black mb-6">AwayMood Provider</h3>
+                    <p class="text-gray-500 mb-10 text-lg">Manage listings and grow your business effortlessly.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.awaymood.provider&pli=1" target="_blank" class="w-full bg-clay text-white py-6 rounded-3xl font-bold text-xl hover:bg-black transition-all">Download for Provider</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 bg-ivory text-center border-t border-sand/50">
+        <div class="text-3xl font-black text-clay mb-4">AWAYMOOD</div>
+        <p class="opacity-40">© 2026 AwayMood. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 1. Initialize Smooth Scroll (Lenis)
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Register GSAP Plugins
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- THE ANIMATION SCRIPT (50+ Lines) ---
+
+        // Navbar Logic
+        ScrollTrigger.create({
+            start: "top -50",
+            onUpdate: (self) => {
+                const nav = document.querySelector("#main-nav");
+                self.direction === 1 ? nav.style.transform = "translateY(-100%)" : nav.style.transform = "translateY(0)";
+                if (self.progress > 0.1) {
+                    nav.style.backgroundColor = "rgba(240, 228, 211, 0.95)";
+                    nav.style.padding = "1rem 2.5rem";
+                } else {
+                    nav.style.backgroundColor = "transparent";
+                    nav.style.padding = "1.5rem 2.5rem";
+                }
+            }
+        });
+
+        // Hero Entrance
+        const tl = gsap.timeline();
+        tl.from(".hero-content h1", { y: 100, opacity: 0, duration: 1.2, ease: "expo.out" })
+          .from(".hero-content p", { y: 30, opacity: 0, duration: 1 }, "-=0.8")
+          .from(".hero-image-wrap", { y: 200, opacity: 0, duration: 1.5, ease: "power4.out" }, "-=1");
+
+gsap.to(".hero-image-wrap", {
+    scrollTrigger: {
+        trigger: "section", // ابدأ عند بداية الصفحة
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+    },
+    // بدلاً من الاختفاء التام، اجعلها تتحرك ببطء (Parallax)
+    y: 150, 
+    scale: 0.95,
+    opacity: 1, // ستظل مرئية حتى يغطيها قسم Features تماماً
+    duration: 1
+});
+        // Feature Cards Stagger (Side Entry)
+        gsap.utils.toArray(".feature-card").forEach((card, i) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                x: 0,
+                y: -40,
+                rotate: i % 2 === 0 ? -2 : 2,
+                duration: 1,
+                ease: "power3.out"
+            });
+            
+            // Icon Bounce inside card
+            gsap.from(card.querySelector(".icon-box"), {
+                scrollTrigger: { trigger: card, start: "top 80%" },
+                scale: 0,
+                rotation: -180,
+                duration: 1.2,
+                ease: "back.out(2)"
+            });
+        });
+
+        // Download Cards Magnetic Entry
+        gsap.to(".download-card", {
+            scrollTrigger: {
+                trigger: "#download",
+                start: "top 75%",
+            },
+            opacity: 1,
+            y: 0,
+            stagger: 0.3,
+            duration: 1.2,
+            ease: "elastic.out(1, 0.8)"
+        });
+
+        // Background Color Shift
+        gsap.to("body", {
+            scrollTrigger: {
+                trigger: "#features",
+                start: "top center",
+                end: "bottom center",
+                scrub: true
+            },
+            backgroundColor: "#FFFFF0" // Fades to Ivory
+        });
+
+        // Footer Reveal
+        gsap.from("footer div", {
+            scrollTrigger: { trigger: "footer", start: "top bottom" },
+            y: 50,
+            opacity: 0,
+            duration: 1
+        });
+    </script>
+</body>
+</html>
